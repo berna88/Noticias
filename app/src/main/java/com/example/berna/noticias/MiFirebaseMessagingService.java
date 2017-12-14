@@ -1,5 +1,9 @@
 package com.example.berna.noticias;
 
+
+
+import android.support.v4.app.NotificationManagerCompat;
+import android.support.v4.media.app.NotificationCompat;
 import android.util.Log;
 
 import com.google.firebase.messaging.FirebaseMessagingService;
@@ -18,6 +22,13 @@ public class MiFirebaseMessagingService extends FirebaseMessagingService {
         Log.d(TAG, "Mensaje recibido de: "+ from);
         if (remoteMessage.getNotification() != null){
             Log.d(TAG, "Notificacion: "+ remoteMessage.getNotification().getBody());
+            mostrarNotificacion(remoteMessage.getNotification().getTitle(), remoteMessage.getNotification().getBody());
         }
     }
+
+    private void mostrarNotificacion(String title, String body) {
+        
+    }
+
+
 }
