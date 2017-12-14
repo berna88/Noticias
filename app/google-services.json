@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "223125403183",
+    "firebase_url": "https://noticias-fd8e0.firebaseio.com",
+    "project_id": "noticias-fd8e0",
+    "storage_bucket": "noticias-fd8e0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:223125403183:android:954da7c931c09c36",
+        "android_client_info": {
+          "package_name": "com.example.berna.noticias"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "223125403183-i3n9k0obq046g98r1ghb6811r8b9r082.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.berna.noticias",
+            "certificate_hash": "3702464cfaf7cd8e9ff720950e143a0ed276d984"
+          }
+        },
+        {
+          "client_id": "223125403183-g13i2iqnm4lamp4t69r1nujcj3q222ip.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA5E9Am1p-FCTWuIH0zqFamFehnP0UNVAA"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "223125403183-g13i2iqnm4lamp4t69r1nujcj3q222ip.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
