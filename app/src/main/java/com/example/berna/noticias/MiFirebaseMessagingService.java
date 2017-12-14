@@ -2,8 +2,9 @@ package com.example.berna.noticias;
 
 
 
-import android.support.v4.app.NotificationManagerCompat;
-import android.support.v4.media.app.NotificationCompat;
+import android.support.v4.app.NotificationCompat;
+import android.support.v4.app.NotificationCompatBase;
+import android.support.v4.app.NotificationCompatExtras;
 import android.util.Log;
 
 import com.google.firebase.messaging.FirebaseMessagingService;
