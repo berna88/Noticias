@@ -16,16 +16,22 @@ import android.util.Log;
 import com.google.firebase.messaging.FirebaseMessagingService;
 import com.google.firebase.messaging.RemoteMessage;
 
+import java.util.Map;
+
 /**
  * Created by BERNA on 13/12/2017.
  */
 
 public class MiFirebaseMessagingService extends FirebaseMessagingService {
     public static final String TAG = "NOTICIAS";
+    private Map<String, String> getData;
     @Override
     public void onMessageReceived(RemoteMessage remoteMessage) {
         super.onMessageReceived(remoteMessage);
         String from = remoteMessage.getFrom();
+        getData = remoteMessage.getData();
+
+
         Log.d(TAG, "Mensaje recibido de: "+ from);
         if (remoteMessage.getNotification() != null){
             Log.d(TAG, "Notificacion: "+ remoteMessage.getNotification().getBody());
@@ -36,6 +42,10 @@ public class MiFirebaseMessagingService extends FirebaseMessagingService {
     private void mostrarNotificacion(String title, String body) {
         Intent i = new Intent(this, MainActivity.class);
         i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        String url = getData.get("image");
+        i.putExtra("title", title);
+        i.putExtra("body", body);
+        i.putExtra("image", url);
         PendingIntent pendingIntent = PendingIntent.getActivity(getApplicationContext(),0,i,PendingIntent.FLAG_ONE_SHOT);
 
         Uri uri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
