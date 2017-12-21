@@ -4,6 +4,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
+import android.webkit.WebViewClient;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
@@ -27,11 +28,15 @@ public class MainActivity extends AppCompatActivity {
             }
         }
         */
+        wv_content.loadDataWithBaseURL(null,"<html><head></head><body><table style=\"width:100%; height:100%;\"><tr><td style=\"vertical-align:middle;\"><img src=\"" + image + "\"></td></tr></table></body></html>", "html/css", "utf-8", null);
         WebSettings webSettings = wv_content.getSettings();
         webSettings.setUseWideViewPort(true);
         webSettings.setLoadWithOverviewMode(true);
         wv_content.getSettings().setBuiltInZoomControls(true);
-        wv_content.loadUrl(image+"=s0");
+        //wv_content.loadUrl(image+"=s0");
+        wv_content.setWebViewClient(
+                new WebViewClient()
+        );
 
 
 
