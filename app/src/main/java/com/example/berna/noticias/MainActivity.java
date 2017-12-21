@@ -13,6 +13,9 @@ public class MainActivity extends AppCompatActivity {
         tv_info = (TextView) findViewById(R.id.tv_info);
         if (getIntent().getExtras()!= null){
             for (String key:getIntent().getExtras().keySet()){
+                if(key.equals("image")){
+
+                }
                     String value = getIntent().getExtras().getString(key);
                     tv_info.append(key+" : "+ value);
             }
