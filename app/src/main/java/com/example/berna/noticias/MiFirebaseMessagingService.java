@@ -48,6 +48,7 @@ public class MiFirebaseMessagingService extends FirebaseMessagingService {
         i.putExtra("body", body);
         i.putExtra("image", image);
         i.putExtra("url",url);
+        Log.i(TAG, "Titulo: "+title);
         PendingIntent pendingIntent = PendingIntent.getActivity(getApplicationContext(),0,i,PendingIntent.FLAG_ONE_SHOT);
 
         Uri uri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
