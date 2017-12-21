@@ -42,10 +42,12 @@ public class MiFirebaseMessagingService extends FirebaseMessagingService {
     private void mostrarNotificacion(String title, String body) {
         Intent i = new Intent(this, MainActivity.class);
         i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-        String url = getData.get("image");
+        String image = getData.get("image");
+        String url = getData.get("url");
         i.putExtra("title", title);
         i.putExtra("body", body);
-        i.putExtra("image", url);
+        i.putExtra("image", image);
+        i.putExtra("url",url);
         PendingIntent pendingIntent = PendingIntent.getActivity(getApplicationContext(),0,i,PendingIntent.FLAG_ONE_SHOT);
 
         Uri uri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);

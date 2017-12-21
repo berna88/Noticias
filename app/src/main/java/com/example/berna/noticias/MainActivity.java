@@ -17,7 +17,8 @@ public class MainActivity extends AppCompatActivity {
         tv_info = (TextView) findViewById(R.id.tv_info);
         String title = getIntent().getStringExtra("title");
         String body = getIntent().getStringExtra("body");
-        String url = getIntent().getStringExtra("image");
+        String image = getIntent().getStringExtra("image");
+        String url = getIntent().getStringExtra("url");
         //tv_info.append(title+body+url);
         /*
         if (getIntent().getExtras()!= null){
@@ -30,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
         webSettings.setUseWideViewPort(true);
         webSettings.setLoadWithOverviewMode(true);
         wv_content.getSettings().setBuiltInZoomControls(true);
-        wv_content.loadUrl(url+"=s0");
+        wv_content.loadUrl(image+"=s0");
 
 
 
