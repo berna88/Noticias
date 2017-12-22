@@ -2,6 +2,7 @@ package com.example.berna.noticias;
 
 import android.content.Intent;
 import android.net.Uri;
+import android.provider.Settings;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -30,10 +31,10 @@ public class MainActivity extends AppCompatActivity {
         tv_info = (TextView) findViewById(R.id.tv_info);
         iv_get_notification = (ImageView) findViewById(R.id.iv_get_notification);
         title = getIntent().getStringExtra("title");
-        Log.i(TAG,"Titulo en main"+title);
         String body = getIntent().getStringExtra("body");
         final String image = getIntent().getStringExtra("image");
-        final String url = getIntent().getStringExtra("url");
+        String url = getIntent().getStringExtra("url");
+        String video = getIntent().getStringExtra("video");
         loadImage(image, url);
         //tv_info.append(title+body+url);
         /*
@@ -56,11 +57,14 @@ public class MainActivity extends AppCompatActivity {
                         iv_get_notification.setOnClickListener(new View.OnClickListener() {
                             @Override
                             public void onClick(View v) {
-                                Intent view = new Intent();
-                                view.setAction(Intent.ACTION_VIEW);
-                                view.setData(Uri.parse(url));
-                                startActivity(view);
+                                try {
+                                    Intent view = new Intent();
+                                    view.setAction(Intent.ACTION_VIEW);
+                                    view.setData(Uri.parse(url));
+                                    startActivity(view);
+                                }catch (Exception e){
 
+                                }
                             }
                         });
                         tv_info.setText(title);
@@ -72,4 +76,5 @@ public class MainActivity extends AppCompatActivity {
                     }
                 });
     }
+
 }
