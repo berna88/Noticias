@@ -27,6 +27,9 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        //getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setIcon(R.drawable.consistent);
         tv_info = (TextView) findViewById(R.id.tv_info);
         iv_get_notification = (ImageView) findViewById(R.id.iv_get_notification);
         title = getIntent().getStringExtra("title");
