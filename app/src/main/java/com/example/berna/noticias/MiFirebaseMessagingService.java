@@ -6,6 +6,7 @@ import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.BitmapFactory;
 import android.media.RingtoneManager;
 import android.net.Uri;
 import android.support.v4.app.NotificationCompat;
@@ -44,16 +45,18 @@ public class MiFirebaseMessagingService extends FirebaseMessagingService {
         i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         String image = getData.get("image");
         String url = getData.get("url");
+        String video = getData.get("video");
         i.putExtra("title", title);
         i.putExtra("body", body);
         i.putExtra("image", image);
         i.putExtra("url",url);
-        Log.i(TAG, "Titulo: "+title);
+        i.putExtra("video",video);
         PendingIntent pendingIntent = PendingIntent.getActivity(getApplicationContext(),0,i,PendingIntent.FLAG_ONE_SHOT);
 
         Uri uri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
         NotificationCompat.Builder builder = new NotificationCompat.Builder(this)
-                .setSmallIcon(R.drawable.ic_launcher_background)
+                .setSmallIcon(R.drawable.consistent)
+                .setLargeIcon(BitmapFactory.decodeResource(getApplicationContext().getResources(), R.drawable.consistent))
                 .setContentTitle(title)
                 .setContentText(body)
                 .setAutoCancel(true)
